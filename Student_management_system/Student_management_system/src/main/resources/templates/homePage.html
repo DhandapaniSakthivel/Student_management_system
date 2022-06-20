@@ -285,7 +285,7 @@ footer {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/students" method="get" onsubmit="return check_info()">
+  <form class="modal-content animate" action="/" method="get">
       <div class="imgcontainer">
     
      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -377,28 +377,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-function check_info()
-
-{
-
-var username=document.getElementById("username").value;
-var password=document.getElementById("password").value;
-
-    if(username == "admin" && password == "Savd@1234")
-
-      {
-       return true;
-       
-      }
-
-      else
-      { 
-        alert("checkpassword"); 
-        return false;
-      }
-
-  }
 
 </script>
 <br><br><br><br><br><br><br><br><br><br><br><br><footer>Copyright &copy;2022 ABC College of Engineering</footer>
