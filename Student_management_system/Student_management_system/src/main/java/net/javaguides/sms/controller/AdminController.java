@@ -24,40 +24,34 @@ public class AdminController {
 		return "signup";
 	}
 	
-	/*@GetMapping(path="/students")
+	@GetMapping(path="/")
 	public String getUsers(@RequestParam(name="username") String username, @RequestParam(name="password") String password) {
 	  	String value = null;
 	  	Admin admin = new Admin();
 	  	List<Admin> admins = repo.findAll();
-	  	System.out.println("###repooo--->"+repo.count());
-	  	System.out.println("###name--->"+repo.equals(admin.getUsername()));
-	  	System.out.println("### Lisu size"+admins.size());
 	  	
-	  try {
-		  if(!admins.isEmpty() && admins.size()>0)
-		  {
-	  
-		  for(Admin a : admins)
-	  
-	  	{
-	  		System.out.println("### admin user afer if --->"+a.getUsername());
-  			System.out.println("### admin userafter if --->"+a.getPassword());
-	  		if(username.equals(a.getUsername()) && password.equals(a.getPassword()))
+	  	try {
+	  		if(!admins.isEmpty() && admins.size()>0)
 	  		{
-	  			System.out.println("### admin user afer con --->"+a.getUsername());
-	  			System.out.println("### admin userafter con --->"+a.getPassword());
-	  			value = "students";
-	  			break;
-	  		}
-	  		else
-	  		{
-	  			System.out.println("### admin user else--->"+a.getUsername());
-	  			System.out.println("### admin user else --->"+a.getPassword());
-	  			value = "homePage";
+
+	  			for(Admin a : admins)
+
+	  			{
+
+	  				if(username.equals(a.getUsername()) && password.equals(a.getPassword()))
+	  				{
+
+	  					value = "redirect:/students";
+	  					break;
+	  				}
+	  				else
+	  				{
+
+	  					value = "redirect:/homePage";
+	  				}
+	  			}
 	  		}
 	  	}
-		  }
-	  }
 	  catch(Exception e)
 	  {
 		  System.out.println("Admin table is empty"+e.getMessage());
@@ -65,7 +59,7 @@ public class AdminController {
 	  	
 	  		return value;
 	  	
-	}	*/
+	}
 	
 	@PostMapping("/signup")
 	public String processRegistration(@ModelAttribute("admin")Admin admin)
